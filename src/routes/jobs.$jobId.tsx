@@ -146,7 +146,7 @@ function TrackInner() {
           <div className="rounded-lg bg-background p-4">
             <p className="font-semibold">{plant.name}</p>
             <p className="mt-1 text-sm text-muted-foreground">
-              {plant.address} · {plant.hours}. The wash starts on its own — no extra tap. You'll get a ping when it's ready.
+              {plant.address} · {plant.hours}. The wash starts on its own. No extra tap. You'll get a ping when it's ready.
             </p>
           </div>
         )}
@@ -251,7 +251,7 @@ function TrackInner() {
               {job.paymentStatus === "captured"
                 ? `Card charged ${formatMoney(job.price)} automatically.`
                 : job.paymentStatus === "authorized"
-                  ? "Card is still on hold — the charge finishes with this job."
+                  ? "Card is still on hold. The charge finishes with this job."
                   : "Receipt is ready."}
             </p>
             {isLaundry && job.laundryMode !== "delivery" && (
@@ -290,7 +290,7 @@ function TrackInner() {
               onClick={() => {
                 void rateJob({ data: { jobId: job.id, rating: stars, tip } }).then((d) => {
                   if (d) setJob(d);
-                  toast("Thanks — receipt saved");
+                  toast("Thanks. Receipt saved");
                 });
               }}
             >
@@ -341,7 +341,7 @@ function TrackInner() {
               <div className="flex justify-between">
                 <dt className="text-muted-foreground">Card</dt>
                 <dd className="capitalize">
-                  {job.paymentStatus === "captured" ? "Charged" : job.paymentStatus === "authorized" ? "Hold" : job.paymentStatus === "voided" ? "Released" : "—"}
+                  {job.paymentStatus === "captured" ? "Charged" : job.paymentStatus === "authorized" ? "Hold" : job.paymentStatus === "voided" ? "Released" : "Unpaid"}
                 </dd>
               </div>
               <div className="flex justify-between border-t border-border pt-2 font-semibold">

@@ -24,7 +24,7 @@ function Home() {
               18 crews on duty nearby
             </Badge>
             <h1 className="max-w-xl text-4xl font-semibold tracking-tight text-ink sm:text-6xl">
-              A cleaner at your door — like calling a ride.
+              A cleaner at your door, like calling a ride.
             </h1>
             <p className="mt-5 max-w-md text-base text-muted-foreground sm:text-lg">
               OnDuty is on-demand home cleaning. Drop a pin, match a vetted crew in minutes, watch them arrive.
@@ -41,7 +41,7 @@ function Home() {
               </Button>
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
-              Laundry and dry clean too — drop off, collect, or we deliver it back.{" "}
+              Laundry and dry clean too. Drop off, collect, or we deliver it back.{" "}
               <Link to="/book" search={{ service: "laundry" }} className="font-medium text-primary">
                 Book laundry
               </Link>
@@ -189,7 +189,7 @@ function Home() {
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">For crews</p>
             <h2 className="mt-2 text-3xl font-semibold text-ink">Go on duty. Jobs come to you.</h2>
             <p className="mt-3 text-sm text-muted-foreground">
-              Set yourself online, accept a ping, navigate to the door. Same rails the customer sees — just the other seat.
+              Set yourself online, accept a ping, navigate to the door. Same rails the customer sees, just the other seat.
             </p>
             <ul className="mt-6 space-y-2 text-sm">
               <li className="flex items-center gap-2">

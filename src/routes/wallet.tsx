@@ -57,8 +57,8 @@ function WalletInner() {
       <h1 className="mt-1 text-3xl font-semibold text-ink">Wallet</h1>
       <p className="mt-2 text-sm text-muted-foreground">
         {paystack
-          ? `Paystack test mode is on. Booking opens Paystack in ${payCurrency} — no card number is stored here.`
-          : "We store brand, last four, and expiry only — never the full number. Jobs authorize on book and capture when complete."}
+          ? `Paystack test mode is on. Booking opens Paystack in ${payCurrency}. No card number is stored here.`
+          : "We store brand, last four, and expiry only. Never the full number. Jobs authorize on book and capture when complete."}
       </p>
 
       {me?.wallet && (

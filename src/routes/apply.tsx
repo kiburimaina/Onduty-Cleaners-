@@ -379,7 +379,7 @@ function ApplyInner() {
               ].map(([k, v]) => (
                 <li key={k} className="flex justify-between gap-3 border-b border-border/70 py-2">
                   <span className="text-muted-foreground">{k}</span>
-                  <span className="text-right font-medium">{v || "—"}</span>
+                  <span className="text-right font-medium">{v || "Not set"}</span>
                 </li>
               ))}
             </ul>

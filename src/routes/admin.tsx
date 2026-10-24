@@ -174,7 +174,7 @@ function AdminInner() {
               type="password"
               value={paySecret}
               onChange={(e) => setPaySecret(e.target.value.trim())}
-              placeholder={payHint ? `Saved ${payHint} — paste only to replace` : "sk_test_…"}
+              placeholder={payHint ? `Saved ${payHint}. Paste only to replace` : "sk_test_…"}
               autoComplete="new-password"
               disabled={payFromEnv}
             />
@@ -258,13 +258,13 @@ function AdminInner() {
             <div>
               <p className="text-lg font-semibold">{file.legalName}</p>
               <p className="text-sm text-muted-foreground">
-                {file.city} · born {file.dob || "—"} · {file.idType.replace("_", " ")} {file.idNumber} · expires {file.idExpiry || "—"}
+                {file.city} · born {file.dob || "Not set"} · {file.idType.replace("_", " ")} {file.idNumber} · expires {file.idExpiry || "Not set"}
               </p>
-              <p className="mt-1 text-sm text-muted-foreground">Good conduct issued {file.conductIssued || "—"}</p>
+              <p className="mt-1 text-sm text-muted-foreground">Good conduct issued {file.conductIssued || "Not set"}</p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
               <DocShot label="Profile" src={file.profilePhoto} />
-              <DocShot label="Selfie — match to ID" src={file.selfie} />
+              <DocShot label="Selfie, match to ID" src={file.selfie} />
               <DocShot label="ID front" src={file.idFront} />
               <DocShot label="ID back" src={file.idBack} />
               <DocShot label="Good conduct" src={file.goodConduct} className="sm:col-span-2" />
@@ -276,12 +276,12 @@ function AdminInner() {
                 className="mt-1.5"
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
-                placeholder="Optional — required if you ask for more"
+                placeholder="Optional. Required if you ask for more"
               />
             </div>
             {file.status !== "approved" && (
               <div className="flex flex-wrap gap-2">
-                <Button onClick={() => review("approved")}>Approve — can go on duty</Button>
+                <Button onClick={() => review("approved")}>Approve, can go on duty</Button>
                 <Button variant="outline" onClick={() => review("needs_info")}>
                   Need a clearer file
                 </Button>
@@ -341,7 +341,7 @@ function AdminInner() {
                 className="mt-3"
                 variant="outline"
                 onClick={() => {
-                  void replyTicket({ data: { ticketId: t.id, body: "We're on it — a lead will follow up." } }).then(() => {
+                  void replyTicket({ data: { ticketId: t.id, body: "We're on it. A lead will follow up." } }).then(() => {
                     toast("Replied");
                     void listTickets().then(setTickets);
                   });

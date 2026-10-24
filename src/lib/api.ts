@@ -185,7 +185,7 @@ function assertImage(value: string, label: string, required = true) {
     return;
   }
   if (!value.startsWith("data:image/")) throw new Error(`${label} must be a photo`);
-  if (value.length > MAX_IMG) throw new Error(`${label} is too large — take it again a bit farther back`);
+  if (value.length > MAX_IMG) throw new Error(`${label} is too large. Take it again a bit farther back`);
 }
 
 function isAdult(dob: string) {
@@ -278,7 +278,7 @@ export const updateProfile = createServerFn({ method: "POST" })
     if (data.role === "customer" && profile.role !== "admin") role = "customer";
     if (data.role === "cleaner" && profile.role !== "admin") {
       const vetting = await loadVetting(sql, context.userId);
-      if (vetting.status !== "approved") throw new Error("Finish crew checks first — staff reviews ID and good conduct");
+      if (vetting.status !== "approved") throw new Error("Finish crew checks first. Staff reviews ID and good conduct");
       role = "cleaner";
     }
     await sql`update profiles set name = ${name}, phone = ${phone}, address = ${address}, role = ${role} where user_id = ${context.userId}`;
@@ -1041,7 +1041,7 @@ export const saveVettingDraft = createServerFn({ method: "POST" })
     const sql = await getSql();
     const current = await loadVetting(sql, context.userId);
     if (current.status === "pending" || current.status === "approved") {
-      throw new Error(current.status === "approved" ? "You're already cleared" : "Already with staff — wait for a review");
+      throw new Error(current.status === "approved" ? "You're already cleared" : "Already with staff. Wait for a review");
     }
     assertImage(data.profilePhoto, "Profile photo", false);
     assertImage(data.idFront, "ID photo", false);

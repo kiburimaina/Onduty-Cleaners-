@@ -24,7 +24,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "OnDuty Cleaners — on-demand home cleaning and laundry. Book a vetted cleaner in under a minute and track them to the door.",
+          "OnDuty Cleaners. On-demand home cleaning and laundry. Book a vetted cleaner in under a minute and track them to the door.",
       },
       { name: "theme-color", content: "#2C7BA6" },
     ],

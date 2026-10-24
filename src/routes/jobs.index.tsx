@@ -134,7 +134,7 @@ function JobRow({ job }: { job: Job }) {
           <CleanerAvatar cleaner={cleaner} />
         ) : (
           <span className="flex size-11 items-center justify-center rounded-full bg-secondary text-xs font-semibold">
-            —
+            OD
           </span>
         )}
         <span className="min-w-0 flex-1">

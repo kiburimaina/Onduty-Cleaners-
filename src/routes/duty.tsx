@@ -101,7 +101,7 @@ function DutyInner() {
             <p className="mt-1 text-sm text-muted-foreground">
               {vet === "pending"
                 ? "ID, selfie, and good conduct are with ops. You'll get a ping when you're cleared."
-                : "National ID, a live face photo, and a certificate of good conduct. Staff signs off — same idea as Uber driver vetting."}
+                : "National ID, a live face photo, and a certificate of good conduct. Staff signs off, the same idea as Uber driver vetting."}
             </p>
             {me?.vetting.staffNote && vet !== "pending" && (
               <p className="mt-3 rounded-md bg-secondary px-3 py-2 text-sm">{me.vetting.staffNote}</p>

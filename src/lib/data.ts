@@ -424,7 +424,7 @@ export const STEPS = [
   {
     n: "01",
     title: "Drop a pin",
-    body: "Address, home size, and the kind of clean — or a laundry bag. Under a minute.",
+    body: "Address, home size, and the kind of clean, or a laundry bag. Under a minute.",
   },
   {
     n: "02",

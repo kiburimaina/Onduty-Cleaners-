@@ -16,7 +16,7 @@ export function assertTestPublic(key: string) {
 export function assertTestSecret(key: string) {
   const value = key.trim();
   if (value.startsWith("sk_live_") || value.startsWith("pk_live_")) {
-    throw new Error("That is a live key. Paste test keys only — they start with sk_test_ and pk_test_.");
+    throw new Error("That is a live key. Paste test keys only. They start with sk_test_ and pk_test_.");
   }
   if (!SECRET_RE.test(value)) throw new Error("Secret key must be a Paystack test key (sk_test_…)");
   return value;
