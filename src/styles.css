@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #eef3f6;
+  --color-foreground: #132634;
+  --color-card: #f8fbfc;
+  --color-card-foreground: #132634;
+  --color-primary: #2c7ba6;
+  --color-primary-foreground: #f4fafc;
+  --color-secondary: #d7e4ec;
+  --color-secondary-foreground: #1a3b4e;
+  --color-muted: #dfe8ee;
+  --color-muted-foreground: #5a7384;
+  --color-accent: #1a4a63;
+  --color-accent-foreground: #f4fafc;
+  --color-border: #c9d8e2;
+  --color-ring: #2c7ba6;
+  --color-silver: #c5d0d8;
+  --color-ink: #0e2430;
+  --color-success: #2f7d62;
+  --color-success-foreground: #f3faf7;
+  --color-destructive: #b42318;
+  --color-destructive-foreground: #fff8f7;
+  --color-map: #d4e4ee;
+  --color-map-water: #b7d3e4;
+  --color-map-park: #c5d5cc;
+  --color-map-road: #f7fbfc;
+  --color-map-building: #c2d0d9;
+
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+  --radius-2xl: 36px;
+  --radius: 12px;
+
+  --shadow-border:
+    0 0 0 1px rgb(18 38 52 / 0.06),
+    0 1px 2px -1px rgb(18 38 52 / 0.06),
+    0 8px 24px -12px rgb(18 38 52 / 0.12);
+  --shadow-lift:
+    0 0 0 1px rgb(18 38 52 / 0.08),
+    0 12px 32px -16px rgb(18 38 52 / 0.22);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  body {
+    min-height: 100dvh;
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  img {
+    outline: 1px solid rgb(18 38 52 / 0.08);
+    outline-offset: -1px;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes radar {
+  0% {
+    transform: scale(0.35);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.86);
+    opacity: 0.7;
+  }
+}
+
+.rise {
+  animation: rise 500ms var(--ease-out) both;
+}
+
+.radar-ring {
+  animation: radar 2.4s var(--ease-out) infinite;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
